@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Array(배열)</h1>
+        <h2>Syntax(문법)</h2>
+        <script>
+            var coworkers = ["egoing12", "leezche", "asdasdtrue"];
+        </script>
+        <h2>get</h2>
+        <script>
+            document.write(coworkers[0], '<br>');
+            document.write(coworkers[1]);
+        </script>
+        <h2>count</h2>
+        <script>
+            document.write(coworkers.length, '<br>'); 
+            /* 즉 우리가 인덱스를 정할때는 0은 첫번째고 1은 두번째가 된다. 
+            허나 개수를 셀때는 개수를 1부터 세기 때문에 값이 
+            두 개라면 length의 값은 2가 된다. */
+            document.write(coworkers[0].indexOf('1'), '<br>');
+            document.write(coworkers[2].indexOf(1 === 1));
+        </script>
+            
+        <h2>add</h2>
+        <script>
+            coworkers.push("apply", "fuck_me");
+            document.write(coworkers)    
+        </script>
+
+        <h2>count version2</h2>
+        <script>
+            document.write(coworkers[3], "<br>");
+            document.write(coworkers.length, "<br>");   
+            document.write(coworkers.indexOf("egoing12"));    
+        </script>
+    </body>
+</html>

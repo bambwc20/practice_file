@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="ads">Hello!</h1>
+    <script>
+        document.getElementById('ads').onclick = function() {bambwc20()};
+
+        function bambwc20() {
+            document.getElementById('ads').innerHTML = "FUCK YOU";
+        }
+    </script>
+</body>
+</html>
+
+<!-- [0]이거가 꼭 배열 거기에만 쓰이는게 아니고 저렇게 여러태그를 구분지을때도 쓴다.-->
+
+<!--
+        <script>
+        document.getElementById('ads').onclick = function() {bambwc20()};
+
+        function bambwc20() {
+            document.getElementById('ads').innerHTML = "FUCK YOU";
+        }
+    </script>
+    이부분이 <h1></h1> 아래 있어야지 작동이 된다...... 왜?
+-->
+
+<!--
+    왜 document.getElementById('ads').onclick = function() {bambwc20()};
+    이렇게 써야 작동을 하는가?
+    그리고 왜 
+    document.getElementById('ads').onclick = bambwc20();을 하면 클릭하지도
+    않았는데 bambwc20()함수가 실행이 되는가?
+-->
+
+

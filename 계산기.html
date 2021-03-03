@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculater</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .reload_box {
+            border: 1px solid gray;
+            padding: 15px;
+            padding-top: 19px;
+            display: inline;
+        }
+        .reload_box_center {
+            margin-top: 100px;
+        }
+        .calculate_box {
+            margin-top: 60px;
+        }
+        #number_logo {
+            margin-top: 40px;
+        }
+        .headline {
+            font-size: 60px;
+            text-align: center;
+            border-bottom: 1px solid gray;
+            padding: 20px;
+            padding-bottom: 54px;
+            margin-top: 20px;
+            margin-bottom: 45px;
+        }
+    </style>
+        <script>
+            function Calculator() {
+                var number_logo_text = document.getElementById('number_logo');
+                var right_answer_logo_text = document.getElementById('right_answer_logo');
+                var selectedValue = document.querySelector('select').value;
+                var input0 = document.getElementById("first_input").value;
+                var input1 = document.getElementById("second_input").value;
+                change_number0 = parseFloat(input0);
+                change_number1 = parseFloat(input1);
+                switch (selectedValue) {
+                    case "none":
+                    number_logo_text.innerHTML = '<h2 style="color:red;">연산자를 선택하십시오.</h2>';
+                    right_answer_logo_text.innerHTML = "";
+                    break;
+
+                    case "+":
+                    number_logo_text.innerHTML = '<h2 style="color:red;">'+(change_number0+change_number1)+'</h2>';
+                    right_answer_logo_text.innerHTML = "정답:";
+                    break;
+
+                    case "-":
+                    number_logo_text.innerHTML = '<h2 style="color:red;">'+(change_number0-change_number1)+'</h2>';
+                    right_answer_logo_text.innerHTML = "정답:";
+                    break;
+
+                    case "*":
+                    number_logo_text.innerHTML = '<h2 style="color:red;">'+(change_number0*change_number1)+'</h2>';
+                    right_answer_logo_text.innerHTML = "정답:";
+                    break;
+
+                    case "/":
+                    number_logo_text.innerHTML = '<h2 style="color:red;">'+(change_number0/change_number1)+'</h2>';
+                    right_answer_logo_text.innerHTML = "정답:";
+                    break;
+                    
+                    default:
+                }
+            }       
+        </script>
+</head>
+<body>
+    <h1 class="headline">Calculator</h1>
+    <div class="center">
+        <h1 id="right_answer_logo">숫자를 입력해주세요</h1>
+        <h2 id="number_logo">버튼을 누르면 답이 나타납니다.</h2>
+        <div class="calculate_box">
+            <input id="first_input" type="number" placeholder="숫자를 입력하십시오.">  
+            <select>
+                <option value="none">연산자를 선택하시오.</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input id="second_input" type="number"  placeholder="숫자를 입력하십시오.">   
+            <button type="button" onclick="Calculator()">누르시오</button>
+        </div>
+        <div class="reload_box_center">  
+        <form class="reload_box">
+            <input style="font-size: 20px; " type="button" value="초기 상태" onClick="window.location.reload()">
+        </form> 
+        </div> 
+    </div>  
+</body>
+</html>

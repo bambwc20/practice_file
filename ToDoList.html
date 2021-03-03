@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <style>
+        .center {
+            text-align: center;
+        } 
+        .h1_search_margin {
+            margin-top: 50px;
+        }
+        h1 {
+            margin-top: 100px;
+        }
+        #uls {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #uls li button {
+            margin-left: 50px;
+        }
+        #uls li {
+            margin-bottom: 30px;
+        }
+    </style>
+    <script>
+        function ListStore() {
+            var inputs = document.getElementById("input_value"); //input의 value
+            var uls = document.getElementById("uls"); //ul태그
+            if(inputs.value === "") { //input의 value가 아무것도 없다면
+                alert("일정을 입력하세요.")
+            } else { //input의 value가 뭐라도 있다면 
+                var list = document.createElement("li"); //li태그를 새로 만든다.
+                list.innerHTML = inputs.value+'<button onclick="del(this)">삭제</button>'; //그 li태그의 내용을 input의 value로 바꾼다.
+                uls.appendChild(list) //ul태그 밑에 li태그를 단다.
+                inputs.value = ""; //그리고 input 박스의 내용을 없엔다.
+            }
+        }
+        function enter() {
+            if (window.event.keyCode == 13) {
+                ListStore()
+            }
+        }
+        function del(dele) {
+            dele.parentNode.remove();
+        }
+    </script>
+</head>
+<body class="center">
+    <h1>To Do List</h1>
+    <div class="h1_search_margin">
+        <input id="input_value" type="text" onkeypress="enter()">
+        <button onclick="ListStore()">입력</button>
+        <ul id="uls">
+        </ul>
+    </div>  
+</body>
+</html>

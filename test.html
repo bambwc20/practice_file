@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        div {
+            text-align: center;           
+        }
+    </style>
+    <script>
+        function myf(clicked) {
+            var addi = document.querySelector('h1');
+            if(clicked === "see") {
+            addi.setAttribute("style", "background-color: red; border: 5px solid blue;");
+            alert('text chandged!');
+            } else {
+            addi.setAttribute("style", "background-color: white; border: none;");
+            alert('text returned!');
+            }
+        }
+
+        function alued(click) {
+                alert("The value that you clicked: " + click);
+           } 
+    </script>
+</head>
+<body>  
+    <h1>Hello World!</h1><br>
+    <div>
+        <script>
+            var i = 0;
+            var x = 1;      /*x는 1이상이다.*/
+            while(i < x) {
+                document.write('<input id="see" type="button" value="change -hello world- color red" onclick="myf(this.id), alued(this.value)"> <input id="seei" type="button" value="return" onclick="myf(this.id), alued(this.value)"><br>')
+                i = i + 1;
+            }               /*인풋박스의 갯수를 1억개로 손쉽게 늘릴 수 있도록 리팩토링 하였다. while(i < x) {}
+                            x의 값만 바꾸면 인풋박스도 x의 갯수만큼 늘어남과 동시에, 모두 온클릭 이벤트가 적용
+                            되도록 코딩하였다.*/
+        </script>
+    </div>
+</body>
+</html>
+
+<!-- onclick="myf(this.id)"로 해놓고 버튼을 누르면 현재 클릭한 인풋테그의
+id값이 this.id에 저장된다. 우리는 함수를 myf(clicked)로 정의해놓았는데,
+this.id이 현재 클릭한 인풋테그의 id값이 되므로 곧 clicked은 현재 클릭한 
+인풋테그의 id값이 된다. 그러면 clicked가 see인지 아닌지만 보면 된다.
+음 그렇다면 this.value도 응용이 가능하지 않을까?....-->

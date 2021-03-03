@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1+1</title>
+    <style>
+        #core_sentence {
+            text-align: center;
+        }
+        #button {
+            display: inline;
+            border: 1px gray solid;
+            padding: 15px;
+        }
+        #box {
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            border-bottom: 1px solid gray;
+            padding: 25px;
+            padding-bottom: 50px;
+        }
+    </style>
+    <script>
+        function f() {
+            var answer = document.getElementById('un').value;
+            if(answer === '2') {    
+                alert(answer + ' is Right Answer!');
+            } else if(answer === '') {
+                alert('please write the answer!');
+            } else {
+                alert(answer + ' is Wrong Answer!');
+            }
+        }  
+    </script>
+</head>
+<body>
+    <div id="core_sentence">
+        <h1> 1 + 1 = ? </h1><br>
+        <h2> please wirte the anwser and press button!</h2><br><br>
+        <div>
+            <form>           
+                <input id="un" type="number" placeholder="write the anwser!">
+                <input type="button" value="button" onclick="f()">           
+            </form>
+        </div>
+    </div>
+    <div id="box">
+        <div id="button"> 
+           <input style="font-size: 25px;" type="button" value="Night Mode" onclick="
+            var target = document.querySelector('body').style;
+            if(this.value === 'Night Mode') {
+              target.backgroundColor = 'black';
+              target.color = 'white';
+              this.value = 'Day Mode';
+            } else {
+              target.backgroundColor = 'white';
+              target.color = 'black';
+              this.value = 'Night Mode';
+            } 
+            ">
+        </div>
+    </div>
+</body>
+</html>
